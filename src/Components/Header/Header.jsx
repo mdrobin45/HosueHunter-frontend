@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "../../assets/images/logo.svg";
 import Container from "../Container/Container";
 import styles from "./styles.module.css";
 
@@ -8,11 +9,7 @@ const Header = () => {
          <nav className={styles.navMainWrapper}>
             <div className={styles.menuWrapper}>
                <Link to="/" className={styles.logo}>
-                  <img
-                     src="https://flowbite.com/docs/images/logo.svg"
-                     className="h-8"
-                     alt="Course Listing"
-                  />
+                  <img src={logo} className="h-20" alt="Course Listing" />
                </Link>
                <button
                   data-collapse-toggle="navbar-default"
