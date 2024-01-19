@@ -7,22 +7,17 @@ const Header = () => {
       <Container>
          <nav className={styles.navMainWrapper}>
             <div className={styles.menuWrapper}>
-               <Link
-                  to="/"
-                  className="flex items-center space-x-3 rtl:space-x-reverse">
+               <Link to="/" className={styles.logo}>
                   <img
                      src="https://flowbite.com/docs/images/logo.svg"
                      className="h-8"
-                     alt="Flowbite Logo"
+                     alt="Course Listing"
                   />
-                  <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                     Flowbite
-                  </span>
                </Link>
                <button
                   data-collapse-toggle="navbar-default"
                   type="button"
-                  className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                  className={styles.hamburgerIcon}
                   aria-controls="navbar-default"
                   aria-expanded="false">
                   <span className="sr-only">Open main menu</span>
@@ -41,14 +36,12 @@ const Header = () => {
                      />
                   </svg>
                </button>
-               <div
-                  className="hidden w-full md:block md:w-auto"
-                  id="navbar-default">
-                  <ul className="font-medium flex items-center flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white">
+               <div className={styles.navItemWrapper} id="navbar-default">
+                  <ul className={styles.navLists}>
                      <li>
                         <Link
                            to="/"
-                           className="block py-2 px-3 text-gray-800 bg-primary rounded md:bg-transparent md:p-0 "
+                           className={styles.navItem}
                            aria-current="page">
                            Home
                         </Link>
@@ -56,7 +49,7 @@ const Header = () => {
                      <li>
                         <Link
                            to="/dashboard"
-                           className="block py-2 px-3 text-gray-800 bg-primary rounded md:bg-transparent md:p-0 "
+                           className={styles.navItem}
                            aria-current="page">
                            Dashboard
                         </Link>
