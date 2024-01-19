@@ -17,9 +17,16 @@ const useAPI = () => {
       return data;
    };
 
+   // Get courses
+   const allCourses = async () => {
+      const { data } = await axiosRequest.get("/course");
+      return data;
+   };
+
    return {
       userLogin,
       userRegister,
+      allCourses,
    };
 };
 
