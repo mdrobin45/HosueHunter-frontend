@@ -1,18 +1,18 @@
 import { useState } from "react";
-import AuthFormFooter from "../../../../Components/AuthFormElements/AuthFormFooter/AuthFormFooter";
-import AuthFormHeader from "../../../../Components/AuthFormElements/AuthFormHeader/AuthFormHeader";
+import AuthFormFooter from "../../../Components/AuthFormElements/AuthFormFooter/AuthFormFooter";
+import AuthFormHeader from "../../../Components/AuthFormElements/AuthFormHeader/AuthFormHeader";
 import styles from "../styles.module.css";
-import useRegister from "./useRegister";
+import useLogin from "./useLogin";
 
-const Register = () => {
+const Login = () => {
+   const [showPassword, setShowPassword] = useState(false);
    const {
       register,
       handleSubmit,
       onSubmit,
       errors,
-      isPending: pendingRegister,
-   } = useRegister();
-   const [showPassword, setShowPassword] = useState(false);
+      isPending: pendingLogin,
+   } = useLogin();
 
    // Handle password show hide
    const showHideHandler = () => {
@@ -21,29 +21,8 @@ const Register = () => {
    return (
       <div className={styles.sectionWrapper}>
          <div className={styles.formWrapper}>
-            <AuthFormHeader heading="Create an Account" />
+            <AuthFormHeader heading="Login" />
             <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
-               <div className={styles.inputWrapper}>
-                  <label htmlFor="name" className={styles.inputLabel}>
-                     Your Name
-                  </label>
-                  <input
-                     {...register("name", {
-                        required: "This field is required",
-                     })}
-                     type="text"
-                     id="name"
-                     className={styles.input}
-                     required
-                  />
-                  {errors.name ? (
-                     <p className="text-sm text-red-500">
-                        {errors.name.message}
-                     </p>
-                  ) : (
-                     " "
-                  )}
-               </div>
                <div className={styles.inputWrapper}>
                   <label htmlFor="Email" className={styles.inputLabel}>
                      Email
@@ -77,11 +56,6 @@ const Register = () => {
                      <input
                         {...register("password", {
                            required: "This field is required",
-                           pattern: {
-                              value: /^(?=.*[A-Z])(?=.*[!@#$%^&*()_+|~-]).{7,}$/,
-                              message:
-                                 "Password must be at least 6 characters long and include at least one uppercase and one special character",
-                           },
                         })}
                         id="password"
                         type={`${showPassword ? "text" : "password"}`}
@@ -126,18 +100,11 @@ const Register = () => {
                            </svg>
                         )}
                      </div>
-                     {errors.password ? (
-                        <p className="text-sm text-red-500">
-                           {errors.password.message}
-                        </p>
-                     ) : (
-                        ""
-                     )}
                   </div>
                </div>
                <button type="submit" className={styles.submitBtn} size="lg">
-                  {!pendingRegister ? (
-                     "Register"
+                  {!pendingLogin ? (
+                     "Login"
                   ) : (
                      <>
                         <svg
@@ -159,10 +126,10 @@ const Register = () => {
                   )}
                </button>
             </form>
-            <AuthFormFooter registerPage={true} />
+            <AuthFormFooter loginPage={true} />
          </div>
       </div>
    );
 };
 
-export default Register;
+export default Login;

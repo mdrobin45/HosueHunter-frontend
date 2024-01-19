@@ -2,7 +2,7 @@ import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import useAPI from "../../../../Hooks/useAPI";
+import useAPI from "../../../Hooks/useAPI";
 
 const useRegister = () => {
    const { userRegister } = useAPI();

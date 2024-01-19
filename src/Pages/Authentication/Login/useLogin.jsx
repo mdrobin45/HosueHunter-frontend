@@ -2,8 +2,8 @@ import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useLocation, useNavigate } from "react-router-dom";
-import useAPI from "../../../../Hooks/useAPI";
-import useAuth from "../../../../Hooks/useAuth";
+import useAPI from "../../../Hooks/useAPI";
+import useAuth from "../../../Hooks/useAuth";
 
 const useLogin = () => {
    const { userLogin } = useAPI();
