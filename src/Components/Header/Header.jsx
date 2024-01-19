@@ -5,8 +5,8 @@ import styles from "./styles.module.css";
 
 const Header = () => {
    return (
-      <Container>
-         <nav className={styles.navMainWrapper}>
+      <nav className={styles.navMainWrapper}>
+         <Container>
             <div className={styles.menuWrapper}>
                <Link to="/" className={styles.logo}>
                   <img src={logo} className="h-20" alt="Course Listing" />
@@ -62,8 +62,8 @@ const Header = () => {
                   </ul>
                </div>
             </div>
-         </nav>
-      </Container>
+         </Container>
+      </nav>
    );
 };
 

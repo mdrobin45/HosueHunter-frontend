@@ -2,5 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+   background: #f0f4f5;
+}
 @layer base {
 }

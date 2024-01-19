@@ -2,7 +2,7 @@
    color: "#2BB881";
 }
 .navMainWrapper {
-   @apply bg-white border-gray-200 dark:bg-gray-900;
+   @apply bg-white shadow-md border-gray-200 dark:bg-gray-900;
 }
 .menuWrapper {
    @apply max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4;
