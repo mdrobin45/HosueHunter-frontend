@@ -4,6 +4,7 @@ import { MdOutlineWatchLater } from "react-icons/md";
 import { RiPresentationLine } from "react-icons/ri";
 import { FadeLoader } from "react-spinners";
 import useAPI from "../../../Hooks/useAPI";
+import SearchBar from "./SearchBar/SearchBar";
 import styles from "./styles.module.css";
 
 const CourseListing = () => {
@@ -17,6 +18,7 @@ const CourseListing = () => {
 
    return (
       <>
+         <SearchBar />
          {!isPending ? (
             <div className={styles.gridMain}>
                {courses.map((item) => (
