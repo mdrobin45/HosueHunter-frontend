@@ -1,9 +1,38 @@
+import { useState } from "react";
+import useFilteredLists from "../../../../Hooks/useFilteredLists";
+
 const SearchBar = () => {
+   const [select, setSelect] = useState(1);
+   const { setSearchParams } = useFilteredLists();
+
+   // handle change select value
+   const selectChange = (e) => {
+      setSelect(e.target.value);
+   };
+
+   // handle change search input value
+   const searchInputChange = (e) => {
+      const value = e.target.value;
+      if (select == 1) {
+         setSearchParams((prev) => {
+            prev.set("course", value);
+            return prev;
+         });
+      } else if (select == 2) {
+         setSearchParams((prev) => {
+            prev.set("instructor", value);
+            return prev;
+         });
+      }
+   };
+
    return (
       <div className="w-2/4 mx-auto py-10">
          <div className="flex items-center gap-3 pb-4">
             <div className="flex items-center ">
                <input
+                  defaultChecked
+                  onChange={selectChange}
                   id="default-radio-1"
                   type="radio"
                   value="1"
@@ -18,7 +47,7 @@ const SearchBar = () => {
             </div>
             <div className="flex items-center">
                <input
-                  checked
+                  onChange={selectChange}
                   id="default-radio-2"
                   type="radio"
                   value="2"
@@ -51,6 +80,7 @@ const SearchBar = () => {
                </svg>
             </div>
             <input
+               onChange={searchInputChange}
                type="search"
                id="default-search"
                className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 "

@@ -16,6 +16,8 @@ const CourseListing = () => {
       queryFn: () => allCourses(),
    });
 
+   // Search handler
+
    return (
       <>
          <SearchBar />
