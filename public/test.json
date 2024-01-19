@@ -1,0 +1,266 @@
+[
+   {
+      "name": "Full Stack Web Development",
+      "instructor": "Jane Doe",
+      "enrollmentStatus": "open",
+      "thumbnail": "https://i.ibb.co/YRttc6g/1.jpg",
+      "duration": "10 weeks",
+      "schedule": "Mondays and Wednesdays, 6:00 PM - 8:00 PM",
+      "location": "online",
+      "prerequisites": ["HTML", "CSS", "JavaScript"],
+      "syllabus": [
+         {
+            "week": 1,
+            "topic": "Introduction to Web Development",
+            "content": "Overview of web technologies and tools."
+         },
+         {
+            "week": 2,
+            "topic": "Frontend Development with React",
+            "content": "Building interactive user interfaces."
+         },
+         {
+            "week": 3,
+            "topic": "Backend Development with Node.js",
+            "content": "Creating server-side applications."
+         }
+      ],
+      "students": 50,
+      "description": "This course covers the essentials of full-stack web development, including both frontend and backend technologies. Students will learn to create dynamic and responsive web applications using popular frameworks like React and Node.js."
+   },
+   {
+      "name": "Data Science Essentials",
+      "instructor": "Dr. Mark Johnson",
+      "enrollmentStatus": "in progress",
+      "thumbnail": "https://i.ibb.co/y6sWjhV/2.jpg",
+      "duration": "8 weeks",
+      "schedule": "Tuesdays and Thursdays, 7:00 PM - 9:00 PM",
+      "location": "offline",
+      "prerequisites": ["Python", "Statistics"],
+      "syllabus": [
+         {
+            "week": 1,
+            "topic": "Introduction to Data Science",
+            "content": "Overview of data science concepts."
+         },
+         {
+            "week": 2,
+            "topic": "Data Analysis with Pandas",
+            "content": "Manipulating and analyzing data."
+         },
+         {
+            "week": 3,
+            "topic": "Machine Learning Basics",
+            "content": "Introduction to supervised and unsupervised learning."
+         }
+      ],
+      "students": 35,
+      "description": "This course provides a comprehensive introduction to the field of data science. Students will gain hands-on experience in data analysis, machine learning, and data visualization using Python and popular data science libraries."
+   },
+   {
+      "name": "Mobile App Development with Flutter",
+      "instructor": "Alex Wang",
+      "enrollmentStatus": "close",
+      "thumbnail": "https://i.ibb.co/513jBT1/3.webp",
+      "duration": "6 weeks",
+      "schedule": "Fridays, 6:30 PM - 8:30 PM",
+      "location": "online",
+      "prerequisites": ["Dart Programming Language"],
+      "syllabus": [
+         {
+            "week": 1,
+            "topic": "Introduction to Flutter",
+            "content": "Setting up Flutter development environment."
+         },
+         {
+            "week": 2,
+            "topic": "Flutter Widgets",
+            "content": "Exploring various Flutter widgets."
+         },
+         {
+            "week": 3,
+            "topic": "Building UIs with Flutter",
+            "content": "Creating responsive and dynamic user interfaces."
+         }
+      ],
+      "students": 25,
+      "description": "Learn to build cross-platform mobile applications using Flutter. This course covers the basics of Flutter development, widget creation, and UI design, enabling students to develop high-quality mobile apps."
+   },
+   {
+      "name": "Cybersecurity Fundamentals",
+      "instructor": "Dr. Emily White",
+      "enrollmentStatus": "open",
+      "thumbnail": "https://i.ibb.co/FH294m4/4.webp",
+      "duration": "12 weeks",
+      "schedule": "Saturdays, 10:00 AM - 12:00 PM",
+      "location": "offline",
+      "prerequisites": ["Networking Basics", "Linux Fundamentals"],
+      "syllabus": [
+         {
+            "week": 1,
+            "topic": "Introduction to Cybersecurity",
+            "content": "Understanding the basics of cybersecurity."
+         },
+         {
+            "week": 2,
+            "topic": "Network Security",
+            "content": "Securing computer networks."
+         },
+         {
+            "week": 3,
+            "topic": "Ethical Hacking",
+            "content": "Introduction to ethical hacking techniques."
+         }
+      ],
+      "students": 40,
+      "description": "Explore the fundamentals of cybersecurity in this comprehensive course. Topics include network security, ethical hacking, and strategies for securing digital assets."
+   },
+   {
+      "name": "Cloud Computing Essentials",
+      "instructor": "Sarah Chang",
+      "enrollmentStatus": "in progress",
+      "thumbnail": "https://i.ibb.co/c2vJrGX/5.webp",
+      "duration": "8 weeks",
+      "schedule": "Mondays and Thursdays, 6:30 PM - 8:30 PM",
+      "location": "online",
+      "prerequisites": ["Basic Networking", "Linux Command Line"],
+      "syllabus": [
+         {
+            "week": 1,
+            "topic": "Introduction to Cloud Computing",
+            "content": "Overview of cloud computing services."
+         },
+         {
+            "week": 2,
+            "topic": "Amazon Web Services (AWS)",
+            "content": "Exploring AWS services."
+         },
+         {
+            "week": 3,
+            "topic": "Microsoft Azure",
+            "content": "Understanding Microsoft Azure."
+         }
+      ],
+      "students": 30,
+      "description": "This course provides a solid foundation in cloud computing essentials, covering major cloud service providers and their offerings. Learn to deploy and manage applications in the cloud environment."
+   },
+   {
+      "name": "Blockchain Development",
+      "instructor": "Dr. Michael Brown",
+      "enrollmentStatus": "close",
+      "thumbnail": "https://i.ibb.co/zn6mmNM/6.webp",
+      "duration": "10 weeks",
+      "schedule": "Wednesdays and Fridays, 7:00 PM - 9:00 PM",
+      "location": "offline",
+      "prerequisites": ["Solidity Programming", "Cryptography Basics"],
+      "syllabus": [
+         {
+            "week": 1,
+            "topic": "Introduction to Blockchain",
+            "content": "Understanding the fundamentals of blockchain technology."
+         },
+         {
+            "week": 2,
+            "topic": "Smart Contracts",
+            "content": "Developing smart contracts using Solidity."
+         },
+         {
+            "week": 3,
+            "topic": "Decentralized Applications (DApps)",
+            "content": "Building decentralized applications."
+         }
+      ],
+      "students": 20,
+      "description": "Delve into the world of blockchain development with this hands-on course. Learn the basics of blockchain, smart contract development, and building decentralized applications (DApps) using Solidity."
+   },
+   {
+      "name": "Artificial Intelligence in Business",
+      "instructor": "Dr. Lisa Miller",
+      "enrollmentStatus": "open",
+      "thumbnail": "https://i.ibb.co/kHdX8Xn/7.webp",
+      "duration": "8 weeks",
+      "schedule": "Tuesdays and Thursdays, 6:00 PM - 8:00 PM",
+      "location": "online",
+      "prerequisites": ["Machine Learning Basics", "Python Programming"],
+      "syllabus": [
+         {
+            "week": 1,
+            "topic": "Overview of AI in Business",
+            "content": "Applications and benefits of AI in the business sector."
+         },
+         {
+            "week": 2,
+            "topic": "Natural Language Processing (NLP)",
+            "content": "Understanding and implementing NLP techniques."
+         },
+         {
+            "week": 3,
+            "topic": "AI Ethics and Governance",
+            "content": "Ethical considerations in AI development."
+         }
+      ],
+      "students": 45,
+      "description": "Explore the integration of artificial intelligence (AI) into business processes. This course covers AI applications in various industries, with a focus on natural language processing and ethical considerations in AI."
+   },
+   {
+      "name": "IoT (Internet of Things) Fundamentals",
+      "instructor": "Dr. Kevin Lee",
+      "enrollmentStatus": "in progress",
+      "thumbnail": "https://i.ibb.co/ZWkSQqx/8.webp",
+      "duration": "12 weeks",
+      "schedule": "Saturdays, 2:00 PM - 4:00 PM",
+      "location": "offline",
+      "prerequisites": ["Basic Networking", "Programming Fundamentals"],
+      "syllabus": [
+         {
+            "week": 1,
+            "topic": "Introduction to IoT",
+            "content": "Understanding the basics of the Internet of Things."
+         },
+         {
+            "week": 2,
+            "topic": "IoT Protocols and Communication",
+            "content": "Exploring communication protocols for IoT devices."
+         },
+         {
+            "week": 3,
+            "topic": "IoT Security and Privacy",
+            "content": "Ensuring security and privacy in IoT deployments."
+         }
+      ],
+      "students": 15,
+      "description": "Dive into the fundamentals of the Internet of Things (IoT). This course covers IoT concepts, communication protocols, and strategies for ensuring the security and privacy of IoT devices and data."
+   },
+   {
+      "name": "DevOps for Continuous Delivery",
+      "instructor": "Dr. Robert Carter",
+      "enrollmentStatus": "open",
+      "thumbnail": "https://i.ibb.co/JRmwrBR/9.webp",
+      "duration": "8 weeks",
+      "schedule": "Wednesdays and Fridays, 6:30 PM - 8:30 PM",
+      "location": "online",
+      "prerequisites": [
+         "Version Control (e.g., Git)",
+         "Scripting Language (e.g., Bash)"
+      ],
+      "syllabus": [
+         {
+            "week": 1,
+            "topic": "Introduction to DevOps",
+            "content": "Understanding the principles and practices of DevOps."
+         },
+         {
+            "week": 2,
+            "topic": "Continuous Integration (CI)",
+            "content": "Implementing CI pipelines for automated testing."
+         },
+         {
+            "week": 3,
+            "topic": "Continuous Deployment (CD)",
+            "content": "Automating the deployment process for continuous delivery."
+         }
+      ],
+      "students": 25,
+      "description": "Learn the key concepts of DevOps and how to implement continuous delivery pipelines. This course covers the integration of development and operations practices, including continuous integration, deployment automation, and best practices for achieving efficient and reliable software delivery."
+   }
+]
