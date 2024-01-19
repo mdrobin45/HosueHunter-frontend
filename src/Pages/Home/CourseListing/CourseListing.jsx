@@ -4,6 +4,7 @@ import { MdOutlineWatchLater } from "react-icons/md";
 import { RiPresentationLine } from "react-icons/ri";
 import { FadeLoader } from "react-spinners";
 import useAPI from "../../../Hooks/useAPI";
+import styles from "./styles.module.css";
 
 const CourseListing = () => {
    const { allCourses } = useAPI();
@@ -17,13 +18,11 @@ const CourseListing = () => {
    return (
       <>
          {!isPending ? (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-10 pb-20">
+            <div className={styles.gridMain}>
                {courses.map((item) => (
-                  <div
-                     key={item._id}
-                     className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                  <div key={item._id} className={styles.courseCard}>
                      <div
-                        className="w-full h-60 rounded-t-md"
+                        className={styles.cardThumbnail}
                         style={{
                            backgroundImage: `url(${item.thumbnail})`,
                            backgroundPosition: "center center",
@@ -32,14 +31,12 @@ const CourseListing = () => {
                         }}></div>
                      <div className="p-5">
                         <a href="#">
-                           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                              {item.name}
-                           </h5>
+                           <h5 className={styles.cardTitle}>{item.name}</h5>
                         </a>
-                        <p className=" font-normal text-gray-700 dark:text-gray-400">
+                        <p className={styles.instructorName}>
                            {item.instructor}
                         </p>
-                        <div className="flex items-center">
+                        <div className={styles.ratingWrapper}>
                            <svg
                               className="w-4 h-4 text-yellow-500"
                               aria-hidden="true"
@@ -82,18 +79,16 @@ const CourseListing = () => {
                            </svg>
                            <p className="ml-2">(5.0/3 Ratings)</p>
                         </div>
-                        <p className="text-xl mb-3 text-red-600 font-bold mt-2">
-                           ${item.price}
-                        </p>
-                        <div className="flex items-center gap-3">
-                           <div className="text-gray-600 flex items-center gap-1">
+                        <p className={styles.coursePrice}>${item.price}</p>
+                        <div className={styles.cardFooterWrapper}>
+                           <div className={styles.cardMetaData}>
                               <MdOutlineWatchLater /> {item.duration}
                            </div>
-                           <div className="text-gray-600 flex items-center gap-1">
+                           <div className={styles.cardMetaData}>
                               <FaPeopleGroup />
                               {item.students} Students
                            </div>
-                           <div className="text-gray-600 flex items-center gap-1">
+                           <div className={styles.cardMetaData}>
                               <RiPresentationLine />
                               {item.location}
                            </div>
