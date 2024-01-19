@@ -1,9 +1,10 @@
 import Container from "../../Components/Container/Container";
+import CourseListing from "./CourseListing/CourseListing";
 
 const Home = () => {
    return (
       <Container>
-         <h2>Home</h2>
+         <CourseListing />
       </Container>
    );
 };
