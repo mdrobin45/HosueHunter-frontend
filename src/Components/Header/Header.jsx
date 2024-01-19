@@ -57,7 +57,7 @@ const Header = () => {
                      <li>
                         <Link
                            to="/login"
-                           className="block text-white px-6 uppercase py-2 bg-primary rounded "
+                           className={styles.loginBtn}
                            aria-current="page">
                            Login
                         </Link>

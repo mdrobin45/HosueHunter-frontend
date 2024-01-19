@@ -22,3 +22,6 @@
 .navItem {
    @apply block py-2 px-3 text-gray-800 bg-primary rounded md:bg-transparent md:p-0;
 }
+.loginBtn {
+   @apply block text-white px-6 uppercase py-2 bg-primary rounded;
+}
