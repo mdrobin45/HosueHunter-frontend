@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
+import useUser from "../../Hooks/useUser";
 import logo from "../../assets/images/logo.svg";
 import Container from "../Container/Container";
 import styles from "./styles.module.css";
 
 const Header = () => {
+   const { email } = useUser();
    return (
       <nav className={styles.navMainWrapper}>
          <Container>
@@ -51,14 +53,16 @@ const Header = () => {
                            Dashboard
                         </Link>
                      </li>
-                     <li>
-                        <Link
-                           to="/login"
-                           className={styles.loginBtn}
-                           aria-current="page">
-                           Login
-                        </Link>
-                     </li>
+                     {!email && (
+                        <li>
+                           <Link
+                              to="/login"
+                              className={styles.loginBtn}
+                              aria-current="page">
+                              Login
+                           </Link>
+                        </li>
+                     )}
                   </ul>
                </div>
             </div>

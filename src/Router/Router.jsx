@@ -8,6 +8,7 @@ import CompletedCourses from "../Pages/DashboardPages/EnrolledCourses/CompletedC
 import InProgressCourses from "../Pages/DashboardPages/EnrolledCourses/InProgressCourses/InProgressCourses";
 import Profile from "../Pages/DashboardPages/Profile/Profile";
 import Home from "../Pages/Home/Home";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
    {
@@ -38,7 +39,11 @@ const router = createBrowserRouter([
       children: [
          {
             path: "profile",
-            element: <Profile />,
+            element: (
+               <PrivateRoute>
+                  <Profile />
+               </PrivateRoute>
+            ),
          },
          {
             path: "progress-courses",
