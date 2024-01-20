@@ -5,6 +5,8 @@ const axiosRequest = axios.create({
 });
 
 const useAPI = () => {
+   // const { userId } = useUser();
+
    // User login
    const userLogin = async (loginDetails) => {
       const { data } = await axiosRequest.post("/auth/login", loginDetails);
@@ -37,12 +39,33 @@ const useAPI = () => {
       return data;
    };
 
+   // Fetch user
+   const fetchUser = async (email) => {
+      const { data } = await axiosRequest.get(`/users?email=${email}`);
+      return data;
+   };
+
+   // Course enroll
+   const enrollCourse = async (info) => {
+      const enrollmentInfo = {
+         dueDate: info.dueDate,
+         course: info.course,
+      };
+      const { data } = await axiosRequest.post(
+         `/course/enroll?userId=${info.userId}`,
+         enrollmentInfo
+      );
+      return data;
+   };
+
    return {
       userLogin,
       userRegister,
       allCourses,
       sortCourses,
       singleCourse,
+      fetchUser,
+      enrollCourse,
    };
 };
 
