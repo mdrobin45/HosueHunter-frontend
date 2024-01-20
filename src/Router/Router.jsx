@@ -4,6 +4,8 @@ import MainLayout from "../Layouts/MainLayout";
 import Login from "../Pages/Authentication/Login/Login";
 import Register from "../Pages/Authentication/Register/Register";
 import CourseDetails from "../Pages/CourseDetails/CourseDetails";
+import CompletedCourses from "../Pages/DashboardPages/EnrolledCourses/CompletedCourses/CompletedCourses";
+import InProgressCourses from "../Pages/DashboardPages/EnrolledCourses/InProgressCourses/InProgressCourses";
 import Profile from "../Pages/DashboardPages/Profile/Profile";
 import Home from "../Pages/Home/Home";
 
@@ -37,6 +39,14 @@ const router = createBrowserRouter([
          {
             path: "profile",
             element: <Profile />,
+         },
+         {
+            path: "progress-courses",
+            element: <InProgressCourses />,
+         },
+         {
+            path: "completed-courses",
+            element: <CompletedCourses />,
          },
       ],
    },
