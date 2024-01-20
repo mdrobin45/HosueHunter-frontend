@@ -31,11 +31,18 @@ const useAPI = () => {
       return data;
    };
 
+   // Get single course
+   const singleCourse = async (id) => {
+      const { data } = await axiosRequest.get(`/course/${id}`);
+      return data;
+   };
+
    return {
       userLogin,
       userRegister,
       allCourses,
       sortCourses,
+      singleCourse,
    };
 };
 
