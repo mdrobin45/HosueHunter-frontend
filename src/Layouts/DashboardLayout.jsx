@@ -1,8 +1,6 @@
-import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 
 const DashboardLayout = () => {
-   const [openDropdown, setOpenDropdown] = useState(false);
    return (
       <>
          <button
@@ -40,14 +38,9 @@ const DashboardLayout = () => {
                      </Link>
                   </li>
                   <li>
-                     <button
-                        onClick={() => {
-                           setOpenDropdown(!openDropdown);
-                        }}
-                        type="button"
-                        className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                        aria-controls="dropdown-example"
-                        data-collapse-toggle="dropdown-example">
+                     <Link
+                        to="/dashboard/enrolled"
+                        className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
                         <svg
                            className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"
                            aria-hidden="true"
@@ -62,43 +55,8 @@ const DashboardLayout = () => {
                               d="M10 16.5c0-1-8-2.7-9-2V1.8c1-1 9 .707 9 1.706M10 16.5V3.506M10 16.5c0-1 8-2.7 9-2V1.8c-1-1-9 .707-9 1.706"
                            />
                         </svg>
-                        <span className="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">
-                           Enrolled Courses
-                        </span>
-                        <svg
-                           className="w-3 h-3"
-                           aria-hidden="true"
-                           xmlns="http://www.w3.org/2000/svg"
-                           fill="none"
-                           viewBox="0 0 10 6">
-                           <path
-                              stroke="currentColor"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="m1 1 4 4 4-4"
-                           />
-                        </svg>
-                     </button>
-                     <ul
-                        className={` py-2 space-y-2 ${
-                           !openDropdown ? "hidden" : ""
-                        }`}>
-                        <li>
-                           <Link
-                              to="/dashboard/progress-courses"
-                              className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
-                              In Progress
-                           </Link>
-                        </li>
-                        <li>
-                           <Link
-                              to="/dashboard/completed-courses"
-                              className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
-                              Completed
-                           </Link>
-                        </li>
-                     </ul>
+                        <span className="ms-3">Enrolled Courses</span>
+                     </Link>
                   </li>
                   <hr />
                   <li>

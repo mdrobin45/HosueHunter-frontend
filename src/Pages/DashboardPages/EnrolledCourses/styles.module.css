@@ -1,0 +1,24 @@
+.gridMain {
+   @apply grid grid-cols-1 md:grid-cols-3 gap-y-10 gap-x-2 pb-20;
+}
+.courseCard {
+   @apply max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700;
+}
+.cardThumbnail {
+   @apply w-full h-60 rounded-t-md;
+}
+.cardTitle {
+   @apply mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white;
+}
+.instructorName {
+   @apply font-normal text-gray-700 dark:text-gray-400;
+}
+.ratingWrapper {
+   @apply flex items-center;
+}
+.coursePrice {
+   @apply text-xl mb-3 text-red-600 font-bold mt-2;
+}
+.cardMetaData {
+   @apply text-gray-600 my-2 flex items-center gap-1;
+}
