@@ -1,0 +1,12 @@
+.courseTitle {
+   @apply text-4xl font-bold;
+}
+.metaDataWrapper {
+   @apply flex items-center gap-4 pt-3;
+}
+.metaDataIconWrapper {
+   @apply flex items-center gap-1;
+}
+.metaDataIcon {
+   @apply text-xl text-primary;
+}

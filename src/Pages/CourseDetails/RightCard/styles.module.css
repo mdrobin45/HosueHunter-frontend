@@ -1,0 +1,27 @@
+.mainWrapper {
+   @apply w-[30%] p-6 bg-white;
+}
+.thumbnail {
+   @apply w-full h-52 rounded-md;
+}
+.includeHeading {
+   @apply text-2xl mt-2 pb-3;
+}
+.courseInfoWrapper {
+   @apply flex items-center justify-between border-b py-3;
+}
+.courseInfoKey {
+   @apply text-xl flex gap-2 items-center text-gray-600 font-semibold;
+}
+.courseInfoIcon {
+   @apply text-primary text-2xl;
+}
+.courseInfoValue {
+   @apply text-xl text-gray-500;
+}
+.scheduleInfo {
+   @apply text-xl text-right text-gray-500 w-[50%];
+}
+.enrollBtn {
+   @apply text-xl font-semibold rounded-md mt-6 text-white bg-primary w-full py-3;
+}
