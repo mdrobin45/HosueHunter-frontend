@@ -35,15 +35,15 @@ const router = createBrowserRouter([
    },
    {
       path: "/dashboard",
-      element: <DashboardLayout />,
+      element: (
+         <PrivateRoute>
+            <DashboardLayout />
+         </PrivateRoute>
+      ),
       children: [
          {
             path: "profile",
-            element: (
-               <PrivateRoute>
-                  <Profile />
-               </PrivateRoute>
-            ),
+            element: <Profile />,
          },
          {
             path: "progress-courses",

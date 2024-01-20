@@ -3,10 +3,11 @@ import useUser from "../Hooks/useUser";
 
 const PrivateRoute = ({ children }) => {
    const { email } = useUser();
+
    if (!email) {
       return <Navigate to="/login" />;
    }
-   return { children };
+   return children;
 };
 
 export default PrivateRoute;
