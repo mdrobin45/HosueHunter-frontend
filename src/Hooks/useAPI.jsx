@@ -23,10 +23,19 @@ const useAPI = () => {
       return data;
    };
 
+   // Sort courses
+   const sortCourses = async (course, instructor) => {
+      const { data } = await axiosRequest.get(
+         `/course/sort?course=${course}&instructor=${instructor}`
+      );
+      return data;
+   };
+
    return {
       userLogin,
       userRegister,
       allCourses,
+      sortCourses,
    };
 };
 

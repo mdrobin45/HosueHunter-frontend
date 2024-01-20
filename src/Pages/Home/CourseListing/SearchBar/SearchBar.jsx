@@ -1,9 +1,7 @@
 import { useState } from "react";
-import useFilteredLists from "../../../../Hooks/useFilteredLists";
 
-const SearchBar = () => {
+const SearchBar = ({ loadSortedData, setSearchParams }) => {
    const [select, setSelect] = useState(1);
-   const { setSearchParams } = useFilteredLists();
 
    // handle change select value
    const selectChange = (e) => {
@@ -13,17 +11,22 @@ const SearchBar = () => {
    // handle change search input value
    const searchInputChange = (e) => {
       const value = e.target.value;
-      if (select == 1) {
-         setSearchParams((prev) => {
+      setSearchParams((prev) => {
+         if (select == 1) {
             prev.set("course", value);
-            return prev;
-         });
-      } else if (select == 2) {
-         setSearchParams((prev) => {
+            prev.set("instructor", null);
+         } else if (select == 2) {
+            prev.set("course", null);
             prev.set("instructor", value);
-            return prev;
-         });
-      }
+         }
+
+         return prev;
+      });
+   };
+
+   // Handle search button
+   const handleSearchBtn = () => {
+      loadSortedData();
    };
 
    return (
@@ -88,6 +91,12 @@ const SearchBar = () => {
                required
             />
          </div>
+         <button
+            onClick={handleSearchBtn}
+            type="button"
+            className="text-white mt-4 bg-primary font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+            Search
+         </button>
       </div>
    );
 };

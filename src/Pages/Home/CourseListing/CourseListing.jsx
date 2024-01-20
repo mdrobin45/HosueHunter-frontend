@@ -2,13 +2,17 @@ import { useQuery } from "@tanstack/react-query";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { MdOutlineWatchLater } from "react-icons/md";
 import { RiPresentationLine } from "react-icons/ri";
+import { useSearchParams } from "react-router-dom";
 import { FadeLoader } from "react-spinners";
 import useAPI from "../../../Hooks/useAPI";
 import SearchBar from "./SearchBar/SearchBar";
 import styles from "./styles.module.css";
 
 const CourseListing = () => {
-   const { allCourses } = useAPI();
+   const [searchParams, setSearchParams] = useSearchParams();
+   const { allCourses, sortCourses } = useAPI();
+   const courseName = searchParams.get("course");
+   const instructor = searchParams.get("instructor");
 
    // Fetch data
    const { isPending, data: courses = [] } = useQuery({
@@ -16,11 +20,20 @@ const CourseListing = () => {
       queryFn: () => allCourses(),
    });
 
-   // Search handler
+   // Fetch courses
+   const { data: filteredCourse, refetch: loadSortedData } = useQuery({
+      queryKey: ["sortedCourses"],
+      queryFn: () => sortCourses(courseName, instructor),
+      enabled: false,
+   });
+   console.log(filteredCourse);
 
    return (
       <>
-         <SearchBar />
+         <SearchBar
+            setSearchParams={setSearchParams}
+            loadSortedData={loadSortedData}
+         />
          {!isPending ? (
             <div className={styles.gridMain}>
                {courses.map((item) => (
