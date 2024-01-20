@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { useEffect, useState } from "react";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { MdOutlineWatchLater } from "react-icons/md";
 import { RiPresentationLine } from "react-icons/ri";
@@ -13,6 +14,7 @@ const CourseListing = () => {
    const { allCourses, sortCourses } = useAPI();
    const courseName = searchParams.get("course");
    const instructor = searchParams.get("instructor");
+   const [displayData, setDisplayData] = useState([]);
 
    // Fetch data
    const { isPending, data: courses = [] } = useQuery({
@@ -21,22 +23,34 @@ const CourseListing = () => {
    });
 
    // Fetch courses
-   const { data: filteredCourse, refetch: loadSortedData } = useQuery({
+   const {
+      isFetching: filterPending,
+      data: filteredCourse,
+      refetch: loadSortedData,
+   } = useQuery({
       queryKey: ["sortedCourses"],
       queryFn: () => sortCourses(courseName, instructor),
       enabled: false,
    });
-   console.log(filteredCourse);
+   useEffect(() => {
+      if (!filteredCourse) {
+         setDisplayData(courses);
+      } else {
+         setDisplayData(filteredCourse);
+      }
+   }, [courses, filteredCourse]);
 
    return (
       <>
          <SearchBar
+            filterPending={filterPending}
+            searchParams={searchParams}
             setSearchParams={setSearchParams}
             loadSortedData={loadSortedData}
          />
          {!isPending ? (
             <div className={styles.gridMain}>
-               {courses.map((item) => (
+               {displayData.map((item) => (
                   <div key={item._id} className={styles.courseCard}>
                      <div
                         className={styles.cardThumbnail}

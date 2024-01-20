@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const SearchBar = ({ loadSortedData, setSearchParams }) => {
+const SearchBar = ({ loadSortedData, setSearchParams, filterPending }) => {
    const [select, setSelect] = useState(1);
 
    // handle change select value
@@ -89,8 +89,8 @@ const SearchBar = ({ loadSortedData, setSearchParams }) => {
          <button
             onClick={handleSearchBtn}
             type="button"
-            className="text-white mt-4 bg-primary font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-            Search
+            className="text-white mt-4 flex items-center justify-center bg-primary font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+            {!filterPending ? "Search" : "Loading..."}
          </button>
       </div>
    );
