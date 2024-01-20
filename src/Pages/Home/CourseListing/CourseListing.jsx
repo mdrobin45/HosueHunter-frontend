@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { MdOutlineWatchLater } from "react-icons/md";
 import { RiPresentationLine } from "react-icons/ri";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { FadeLoader } from "react-spinners";
 import useAPI from "../../../Hooks/useAPI";
 import SearchBar from "./SearchBar/SearchBar";
@@ -61,9 +61,9 @@ const CourseListing = () => {
                            backgroundRepeat: "no-repeat",
                         }}></div>
                      <div className="p-5">
-                        <a href="#">
+                        <Link to={`/course/${item._id}`}>
                            <h5 className={styles.cardTitle}>{item.name}</h5>
-                        </a>
+                        </Link>
                         <p className={styles.instructorName}>
                            {item.instructor}
                         </p>
