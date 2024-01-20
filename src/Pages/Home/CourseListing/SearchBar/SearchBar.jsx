@@ -11,17 +11,12 @@ const SearchBar = ({ loadSortedData, setSearchParams }) => {
    // handle change search input value
    const searchInputChange = (e) => {
       const value = e.target.value;
-      setSearchParams((prev) => {
-         if (select == 1) {
-            prev.set("course", value);
-            prev.set("instructor", null);
-         } else if (select == 2) {
-            prev.set("course", null);
-            prev.set("instructor", value);
-         }
 
-         return prev;
-      });
+      if (select == 1) {
+         setSearchParams({ course: value, instructor: null });
+      } else if (select == 2) {
+         setSearchParams({ course: null, instructor: value });
+      }
    };
 
    // Handle search button
