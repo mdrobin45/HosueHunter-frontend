@@ -4,7 +4,7 @@ const Profile = () => {
    const { name, email } = useUser();
    return (
       <div>
-         <div className="bg-white mx-6 lg:w-[60%] lg:mx-auto my-20 overflow-hidden shadow rounded-lg border">
+         <div className="bg-white md:mx-6 lg:w-[60%] lg:mx-auto my-20 overflow-hidden shadow rounded-lg border">
             <div className="flex items-center justify-between">
                <div className="px-4 py-5 sm:px-6">
                   <h3 className="text-lg leading-6 font-medium text-gray-900">

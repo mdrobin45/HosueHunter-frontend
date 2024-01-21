@@ -1,5 +1,5 @@
 .leftSideWrapper {
-   @apply bg-white p-6 rounded w-[70%];
+   @apply bg-white p-6 rounded lg:w-[70%];
 }
 .heading {
    @apply text-3xl pb-3 font-bold;

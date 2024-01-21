@@ -2,7 +2,7 @@
    @apply h-screen flex items-start justify-center flex-col;
 }
 .formWrapper {
-   @apply mx-auto w-[26rem] border rounded-md shadow-md;
+   @apply mx-auto md:w-[26rem] border rounded-md shadow-md;
 }
 .form {
    @apply w-full px-6;

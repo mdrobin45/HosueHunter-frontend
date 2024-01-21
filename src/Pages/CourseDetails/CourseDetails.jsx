@@ -35,7 +35,7 @@ const CourseDetails = () => {
                   <Ratings />
                </div>
             </div>
-            <section className="flex gap-3 mt-6">
+            <section className="lg:flex gap-3 mt-6">
                <LeftCard courseDetails={courseDetails} />
                <RightCard courseDetails={courseDetails} />
             </section>

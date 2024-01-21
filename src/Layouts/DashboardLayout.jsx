@@ -1,9 +1,14 @@
+import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 
 const DashboardLayout = () => {
+   const [sidebar, setSidebar] = useState(false);
    return (
       <>
          <button
+            onClick={() => {
+               setSidebar(!sidebar);
+            }}
             type="button"
             className="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
             <span className="sr-only">Open sidebar</span>
@@ -20,10 +25,16 @@ const DashboardLayout = () => {
             </svg>
          </button>
 
-         <aside className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0">
-            <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+         <aside
+            className={`fixed top-0 left-0 z-40 w-64 h-screen transition-transform ${
+               !sidebar ? "-translate-x-full sm:translate-x-0" : ""
+            }`}>
+            <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50">
                <ul className="space-y-2 font-medium">
-                  <li>
+                  <li
+                     onClick={() => {
+                        setSidebar(!sidebar);
+                     }}>
                      <Link
                         to="/dashboard/profile"
                         className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
@@ -37,7 +48,10 @@ const DashboardLayout = () => {
                         <span className="ms-3">My Profile</span>
                      </Link>
                   </li>
-                  <li>
+                  <li
+                     onClick={() => {
+                        setSidebar(!sidebar);
+                     }}>
                      <Link
                         to="/dashboard/enrolled"
                         className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
@@ -59,7 +73,10 @@ const DashboardLayout = () => {
                      </Link>
                   </li>
                   <hr />
-                  <li>
+                  <li
+                     onClick={() => {
+                        setSidebar(!sidebar);
+                     }}>
                      <Link
                         to="/"
                         className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
@@ -75,29 +92,6 @@ const DashboardLayout = () => {
                            Home
                         </span>
                      </Link>
-                  </li>
-                  <li>
-                     <a
-                        href="#"
-                        className="flex items-center p-2 text-gray-900 rounded-lg">
-                        <svg
-                           className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"
-                           aria-hidden="true"
-                           xmlns="http://www.w3.org/2000/svg"
-                           fill="none"
-                           viewBox="0 0 16 16">
-                           <path
-                              stroke="currentColor"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M8 12V1m0 0L4 5m4-4 4 4m3 5v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-3"
-                           />
-                        </svg>
-                        <span className="flex-1 ms-3 whitespace-nowrap">
-                           Sign Out
-                        </span>
-                     </a>
                   </li>
                </ul>
             </div>

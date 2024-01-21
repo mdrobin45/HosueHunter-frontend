@@ -25,8 +25,8 @@ const SearchBar = ({ loadSortedData, setSearchParams, filterPending }) => {
    };
 
    return (
-      <div className="w-2/4 mx-auto py-10">
-         <div className="flex items-center gap-3 pb-4">
+      <div className="md:w-2/4 mx-auto py-10">
+         <div className="block md:flex items-center gap-3 pb-4">
             <div className="flex items-center ">
                <input
                   defaultChecked

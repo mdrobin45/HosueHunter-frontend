@@ -20,7 +20,7 @@
    @apply text-xl mb-3 text-red-600 font-bold mt-2;
 }
 .cardFooterWrapper {
-   @apply flex items-center gap-3;
+   @apply md:flex items-center gap-3;
 }
 .cardMetaData {
    @apply text-gray-600 flex items-center gap-1;
