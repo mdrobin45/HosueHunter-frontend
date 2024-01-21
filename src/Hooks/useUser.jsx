@@ -13,14 +13,14 @@ const useUser = () => {
    const email = decoded?.email || null;
 
    // Fetch user
-   const { data: dbUser } = useQuery({
+   const { data: dbUser, refetch: refetchUser } = useQuery({
       queryKey: ["fetchUser", name, email],
       queryFn: () => fetchUser(email),
    });
 
    const userId = dbUser?._id;
 
-   return { name, email, userId, dbUser };
+   return { name, email, userId, dbUser, refetchUser };
 };
 
 export default useUser;

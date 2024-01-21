@@ -25,7 +25,7 @@ const RightCard = ({ courseDetails }) => {
       mutationFn: (enrollmentInfo) => enrollCourse(enrollmentInfo),
       onSuccess: () => {
          toast.success("Enroll Successful");
-         navigate("/dashboard/progress-courses");
+         navigate("/dashboard/enrolled");
       },
    });
 

@@ -58,6 +58,14 @@ const useAPI = () => {
       return data;
    };
 
+   // Update course status
+   const updateCourseStatus = async (email, courseId) => {
+      const { data } = await axiosRequest.put(
+         `/course/complete?email=${email}&courseId=${courseId}`
+      );
+      return data;
+   };
+
    return {
       userLogin,
       userRegister,
@@ -66,6 +74,7 @@ const useAPI = () => {
       singleCourse,
       fetchUser,
       enrollCourse,
+      updateCourseStatus,
    };
 };
 
