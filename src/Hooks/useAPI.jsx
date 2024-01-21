@@ -66,6 +66,14 @@ const useAPI = () => {
       return data;
    };
 
+   // Update like count
+   const updateLikeCount = async (courseId) => {
+      const { data } = await axiosRequest.put(
+         `/course/like?courseId=${courseId}`
+      );
+      return data;
+   };
+
    return {
       userLogin,
       userRegister,
@@ -75,6 +83,7 @@ const useAPI = () => {
       fetchUser,
       enrollCourse,
       updateCourseStatus,
+      updateLikeCount,
    };
 };
 

@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { MdOutlineWatchLater } from "react-icons/md";
-import { RiPresentationLine } from "react-icons/ri";
+import { RiPresentationLine, RiThumbUpLine } from "react-icons/ri";
 import { Link, useSearchParams } from "react-router-dom";
 import { FadeLoader } from "react-spinners";
 import Ratings from "../../../Components/Ratings/Ratings";
@@ -12,13 +12,17 @@ import styles from "./styles.module.css";
 
 const CourseListing = () => {
    const [searchParams, setSearchParams] = useSearchParams();
-   const { allCourses, sortCourses } = useAPI();
+   const { allCourses, sortCourses, updateLikeCount } = useAPI();
    const courseName = searchParams.get("course");
    const instructor = searchParams.get("instructor");
    const [displayData, setDisplayData] = useState([]);
 
    // Fetch data
-   const { isPending, data: courses = [] } = useQuery({
+   const {
+      isPending,
+      data: courses = [],
+      refetch: reloadAllCourse,
+   } = useQuery({
       queryKey: ["allCourses"],
       queryFn: () => allCourses(),
    });
@@ -40,6 +44,16 @@ const CourseListing = () => {
          setDisplayData(filteredCourse);
       }
    }, [courses, filteredCourse]);
+
+   // Handle update like
+   const handleUpdateLikeCount = (courseId) => {
+      updateLikeCount(courseId).then((res) => {
+         if (res) {
+            console.log("liked");
+            reloadAllCourse();
+         }
+      });
+   };
 
    return (
       <>
@@ -83,6 +97,15 @@ const CourseListing = () => {
                               {item.location}
                            </div>
                         </div>
+                        <p className="pt-2 flex items-center gap-2">
+                           <RiThumbUpLine
+                              onClick={() => {
+                                 handleUpdateLikeCount(item._id);
+                              }}
+                              className="text-2xl"
+                           />
+                           <span>{item.like}</span>
+                        </p>
                      </div>
                   </div>
                ))}
