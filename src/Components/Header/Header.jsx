@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import useUser from "../../Hooks/useUser";
 import logo from "../../assets/images/logo.svg";
@@ -6,6 +7,7 @@ import styles from "./styles.module.css";
 
 const Header = () => {
    const { email } = useUser();
+   const [dropdown, setDrawdown] = useState(false);
    return (
       <nav className={styles.navMainWrapper}>
          <Container>
@@ -14,11 +16,11 @@ const Header = () => {
                   <img src={logo} className="h-20" alt="Course Listing" />
                </Link>
                <button
-                  data-collapse-toggle="navbar-default"
+                  onClick={() => {
+                     setDrawdown(!dropdown);
+                  }}
                   type="button"
-                  className={styles.hamburgerIcon}
-                  aria-controls="navbar-default"
-                  aria-expanded="false">
+                  className={styles.hamburgerIcon}>
                   <span className="sr-only">Open main menu</span>
                   <svg
                      className="w-5 h-5"
@@ -35,7 +37,10 @@ const Header = () => {
                      />
                   </svg>
                </button>
-               <div className={styles.navItemWrapper} id="navbar-default">
+               <div
+                  className={` ${
+                     !dropdown ? "hidden" : ""
+                  } w-full md:block md:w-auto`}>
                   <ul className={styles.navLists}>
                      <li>
                         <Link

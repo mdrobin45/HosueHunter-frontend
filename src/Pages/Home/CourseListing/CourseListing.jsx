@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { MdOutlineWatchLater } from "react-icons/md";
 import { RiPresentationLine, RiThumbUpLine } from "react-icons/ri";
@@ -49,7 +50,7 @@ const CourseListing = () => {
    const handleUpdateLikeCount = (courseId) => {
       updateLikeCount(courseId).then((res) => {
          if (res) {
-            console.log("liked");
+            toast.success("You liked this course");
             reloadAllCourse();
          }
       });
