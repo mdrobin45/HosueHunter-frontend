@@ -23,6 +23,39 @@ const Register = () => {
          <div className={styles.formWrapper}>
             <AuthFormHeader heading="Create an Account" />
             <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+               <div className="flex mt-4 items-center gap-3">
+                  <div className="flex items-center">
+                     <input
+                        defaultChecked
+                        {...register("role")}
+                        id="owner"
+                        type="radio"
+                        value="owner"
+                        // name="radio"
+                        className="w-4 h-4 text-primary bg-gray-100 border-gray-300 focus:ring-primary  "
+                     />
+                     <label
+                        htmlFor="owner"
+                        className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                        Owner
+                     </label>
+                  </div>
+                  <div className="flex items-center ">
+                     <input
+                        {...register("role")}
+                        id="renter"
+                        type="radio"
+                        // name="radio"
+                        value="renter"
+                        className="w-4 h-4 text-primary bg-gray-100 border-gray-300 focus:ring-primary  "
+                     />
+                     <label
+                        htmlFor="renter"
+                        className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                        Renter
+                     </label>
+                  </div>
+               </div>
                <div className={styles.inputWrapper}>
                   <label htmlFor="name" className={styles.inputLabel}>
                      Your Name
@@ -64,6 +97,31 @@ const Register = () => {
                   {errors.email ? (
                      <p className="text-sm text-red-500">
                         {errors.email.message}
+                     </p>
+                  ) : (
+                     " "
+                  )}
+               </div>
+               <div className={styles.inputWrapper}>
+                  <label htmlFor="phone" className={styles.inputLabel}>
+                     Phone
+                  </label>
+                  <input
+                     {...register("phone", {
+                        required: "This field is required",
+                        pattern: {
+                           value: /^\+8801[3-9]\d{8}$/,
+                           message: "Invalid phone number",
+                        },
+                     })}
+                     type="text"
+                     id="phone"
+                     className={styles.input}
+                     required
+                  />
+                  {errors.phone ? (
+                     <p className="text-sm text-red-500">
+                        {errors.phone.message}
                      </p>
                   ) : (
                      " "

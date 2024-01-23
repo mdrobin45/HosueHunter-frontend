@@ -28,7 +28,9 @@ const useRegister = () => {
    });
 
    // Form submit
-   const onSubmit = async (data) => {
+   const onSubmit = (data) => {
+      console.log("Clicked");
+      console.log(data);
       mutate(data);
    };
 
