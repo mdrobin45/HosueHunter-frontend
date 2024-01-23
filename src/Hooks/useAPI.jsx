@@ -5,8 +5,6 @@ const axiosRequest = axios.create({
 });
 
 const useAPI = () => {
-   // const { userId } = useUser();
-
    // User login
    const userLogin = async (loginDetails) => {
       const { data } = await axiosRequest.post("/auth/login", loginDetails);

@@ -1,4 +1,5 @@
 import { useMutation } from "@tanstack/react-query";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -6,9 +7,10 @@ import useAPI from "../../../Hooks/useAPI";
 import useAuth from "../../../Hooks/useAuth";
 
 const useLogin = () => {
-   const { userLogin } = useAPI();
+   const { userLogin, fetchUser } = useAPI();
    const { state } = useLocation();
    const navigate = useNavigate();
+   const [userRole, setUserRole] = useState(null);
    const { handleSetToken } = useAuth();
 
    const {
@@ -26,6 +28,14 @@ const useLogin = () => {
          if (token) {
             handleSetToken(token);
             toast.success("Login Successful");
+            // Redirect user to their own dashboard
+            if (userRole === "owner") {
+               return navigate("/owner-dashboard/owner-profile");
+            } else if (userRole === "renter") {
+               return navigate("/renter-dashboard/renter-profile");
+            }
+
+            // Redirect user from url state
             if (state !== null) {
                navigate(state.from);
             } else {
@@ -46,6 +56,11 @@ const useLogin = () => {
 
    // Form submit
    const onSubmit = async (data) => {
+      // Fetch user role for redirect
+      fetchUser(data.email).then((res) => {
+         setUserRole(res?.role);
+      });
+
       // User login process
       mutate(data);
    };

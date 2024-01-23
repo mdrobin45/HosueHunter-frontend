@@ -1,13 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
-import DashboardLayout from "../Layouts/DashboardLayout";
 import MainLayout from "../Layouts/MainLayout";
+import OwnerDashboardLayout from "../Layouts/OwnerDashboardLayout";
 import Login from "../Pages/Authentication/Login/Login";
 import Register from "../Pages/Authentication/Register/Register";
 import CourseDetails from "../Pages/CourseDetails/CourseDetails";
 import EnrolledCourses from "../Pages/DashboardPages/EnrolledCourses/EnrolledCourses";
 import Profile from "../Pages/DashboardPages/Profile/Profile";
 import Home from "../Pages/Home/Home";
-import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
    {
@@ -33,15 +32,11 @@ const router = createBrowserRouter([
       element: <Register />,
    },
    {
-      path: "/dashboard",
-      element: (
-         <PrivateRoute>
-            <DashboardLayout />
-         </PrivateRoute>
-      ),
+      path: "/owner-dashboard",
+      element: <OwnerDashboardLayout />,
       children: [
          {
-            path: "profile",
+            path: "owner-profile",
             element: <Profile />,
          },
          {

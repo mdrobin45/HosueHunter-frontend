@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 
-const DashboardLayout = () => {
+const OwnerDashboardLayout = () => {
    const [sidebar, setSidebar] = useState(false);
    return (
       <>
@@ -36,7 +36,7 @@ const DashboardLayout = () => {
                         setSidebar(!sidebar);
                      }}>
                      <Link
-                        to="/dashboard/profile"
+                        to="/owner-dashboard/profile"
                         className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
                         <svg
                            className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"
@@ -53,7 +53,7 @@ const DashboardLayout = () => {
                         setSidebar(!sidebar);
                      }}>
                      <Link
-                        to="/dashboard/enrolled"
+                        to="/owner-dashboard/"
                         className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
                         <svg
                            className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"
@@ -69,7 +69,7 @@ const DashboardLayout = () => {
                               d="M10 16.5c0-1-8-2.7-9-2V1.8c1-1 9 .707 9 1.706M10 16.5V3.506M10 16.5c0-1 8-2.7 9-2V1.8c-1-1-9 .707-9 1.706"
                            />
                         </svg>
-                        <span className="ms-3">Enrolled Courses</span>
+                        <span className="ms-3">Test</span>
                      </Link>
                   </li>
                   <hr />
@@ -106,4 +106,4 @@ const DashboardLayout = () => {
    );
 };
 
-export default DashboardLayout;
+export default OwnerDashboardLayout;
