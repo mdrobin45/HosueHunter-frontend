@@ -1,6 +1,6 @@
 import useUser from "../../../Hooks/useUser";
 
-const Profile = () => {
+const OwnerProfile = () => {
    const { name, email } = useUser();
    return (
       <div>
@@ -65,4 +65,4 @@ const Profile = () => {
    );
 };
 
-export default Profile;
+export default OwnerProfile;

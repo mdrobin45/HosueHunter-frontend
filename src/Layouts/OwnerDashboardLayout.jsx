@@ -36,7 +36,7 @@ const OwnerDashboardLayout = () => {
                         setSidebar(!sidebar);
                      }}>
                      <Link
-                        to="/owner-dashboard/profile"
+                        to="/owner-dashboard/owner-profile"
                         className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
                         <svg
                            className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"
@@ -53,7 +53,7 @@ const OwnerDashboardLayout = () => {
                         setSidebar(!sidebar);
                      }}>
                      <Link
-                        to="/owner-dashboard/"
+                        to="/owner-dashboard/owner-houses"
                         className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
                         <svg
                            className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"
@@ -69,7 +69,31 @@ const OwnerDashboardLayout = () => {
                               d="M10 16.5c0-1-8-2.7-9-2V1.8c1-1 9 .707 9 1.706M10 16.5V3.506M10 16.5c0-1 8-2.7 9-2V1.8c-1-1-9 .707-9 1.706"
                            />
                         </svg>
-                        <span className="ms-3">Test</span>
+                        <span className="ms-3">Houses</span>
+                     </Link>
+                  </li>
+                  <li
+                     onClick={() => {
+                        setSidebar(!sidebar);
+                     }}>
+                     <Link
+                        to="/owner-dashboard/add-new-house"
+                        className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
+                        <svg
+                           className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"
+                           aria-hidden="true"
+                           xmlns="http://www.w3.org/2000/svg"
+                           fill="none"
+                           viewBox="0 0 20 18">
+                           <path
+                              stroke="currentColor"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M10 16.5c0-1-8-2.7-9-2V1.8c1-1 9 .707 9 1.706M10 16.5V3.506M10 16.5c0-1 8-2.7 9-2V1.8c-1-1-9 .707-9 1.706"
+                           />
+                        </svg>
+                        <span className="ms-3">Add New House</span>
                      </Link>
                   </li>
                   <hr />

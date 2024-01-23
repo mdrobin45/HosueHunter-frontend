@@ -3,10 +3,10 @@ import MainLayout from "../Layouts/MainLayout";
 import OwnerDashboardLayout from "../Layouts/OwnerDashboardLayout";
 import Login from "../Pages/Authentication/Login/Login";
 import Register from "../Pages/Authentication/Register/Register";
-import CourseDetails from "../Pages/CourseDetails/CourseDetails";
-import EnrolledCourses from "../Pages/DashboardPages/EnrolledCourses/EnrolledCourses";
-import Profile from "../Pages/DashboardPages/Profile/Profile";
 import Home from "../Pages/Home/Home";
+import AddNewHouse from "../Pages/OwnerDashboardPages/AddNewHouse/AddNewHouse";
+import OwnerHouses from "../Pages/OwnerDashboardPages/Houses/OwnerHouses";
+import OwnerProfile from "../Pages/OwnerDashboardPages/Profile/OwnerProfile";
 
 const router = createBrowserRouter([
    {
@@ -16,10 +16,6 @@ const router = createBrowserRouter([
          {
             path: "/",
             element: <Home />,
-         },
-         {
-            path: "/course/:id",
-            element: <CourseDetails />,
          },
       ],
    },
@@ -37,11 +33,15 @@ const router = createBrowserRouter([
       children: [
          {
             path: "owner-profile",
-            element: <Profile />,
+            element: <OwnerProfile />,
          },
          {
-            path: "enrolled",
-            element: <EnrolledCourses />,
+            path: "owner-houses",
+            element: <OwnerHouses />,
+         },
+         {
+            path: "add-new-house",
+            element: <AddNewHouse />,
          },
       ],
    },
