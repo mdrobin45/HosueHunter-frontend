@@ -1,7 +1,7 @@
-import useUser from "../../../Hooks/useUser";
+import useAuth from "../../../Hooks/useAuth";
 
 const OwnerProfile = () => {
-   const { name, email } = useUser();
+   const { dbUser } = useAuth();
    return (
       <div>
          <div className="bg-white md:mx-6 lg:w-[60%] lg:mx-auto my-20 overflow-hidden shadow rounded-lg border">
@@ -29,7 +29,7 @@ const OwnerProfile = () => {
                         Full name
                      </dt>
                      <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                        {name && name}
+                        {dbUser?.name && dbUser?.name}
                      </dd>
                   </div>
                   <div className="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
@@ -37,7 +37,7 @@ const OwnerProfile = () => {
                         Email address
                      </dt>
                      <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                        {email && email}
+                        {dbUser?.email && dbUser?.email}
                      </dd>
                   </div>
                   <div className="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">

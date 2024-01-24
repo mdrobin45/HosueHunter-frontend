@@ -1,10 +1,10 @@
 import { Navigate } from "react-router-dom";
-import useUser from "../Hooks/useUser";
+import useAuth from "../Hooks/useAuth";
 
 const PrivateRoute = ({ children }) => {
-   const { email } = useUser();
+   const { dbUser } = useAuth();
 
-   if (!email) {
+   if (!dbUser?.email) {
       return <Navigate to="/login" />;
    }
    return children;

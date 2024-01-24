@@ -17,71 +17,23 @@ const useAPI = () => {
       return data;
    };
 
-   // Get courses
-   const allCourses = async () => {
-      const { data } = await axiosRequest.get("/course");
-      return data;
-   };
-
-   // Sort courses
-   const sortCourses = async (course, instructor) => {
-      const { data } = await axiosRequest.get(
-         `/course/sort?course=${course}&instructor=${instructor}`
-      );
-      return data;
-   };
-
-   // Get single course
-   const singleCourse = async (id) => {
-      const { data } = await axiosRequest.get(`/course/${id}`);
-      return data;
-   };
-
    // Fetch user
    const fetchUser = async (email) => {
       const { data } = await axiosRequest.get(`/users?email=${email}`);
       return data;
    };
 
-   // Course enroll
-   const enrollCourse = async (info) => {
-      const enrollmentInfo = {
-         dueDate: info.dueDate,
-         course: info.course,
-      };
-      const { data } = await axiosRequest.post(
-         `/course/enroll?userId=${info.userId}`,
-         enrollmentInfo
-      );
-      return data;
-   };
-
-   // Update course status
-   const updateCourseStatus = async (email, courseId) => {
-      const { data } = await axiosRequest.put(
-         `/course/complete?email=${email}&courseId=${courseId}`
-      );
-      return data;
-   };
-
-   // Update like count
-   const updateLikeCount = async (courseId) => {
-      const { data } = await axiosRequest.put(
-         `/course/like?courseId=${courseId}`
-      );
+   // Add new house
+   const AddNewHouse = async (houseData) => {
+      const { data } = await axiosRequest.post(`/house/add-new`, { houseData });
       return data;
    };
 
    return {
       userLogin,
       userRegister,
-      allCourses,
-      sortCourses,
-      singleCourse,
       fetchUser,
-      enrollCourse,
-      updateCourseStatus,
-      updateLikeCount,
+      AddNewHouse,
    };
 };
 

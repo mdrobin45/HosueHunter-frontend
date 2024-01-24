@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import useUser from "../../Hooks/useUser";
+import useAuth from "../../Hooks/useAuth";
 import logo from "../../assets/images/logo.svg";
 import Container from "../Container/Container";
 import styles from "./styles.module.css";
 
 const Header = () => {
-   const { email } = useUser();
+   const { dbUser } = useAuth();
    const [dropdown, setDrawdown] = useState(false);
    return (
       <nav className={styles.navMainWrapper}>
@@ -58,7 +58,7 @@ const Header = () => {
                            Dashboard
                         </Link>
                      </li>
-                     {!email && (
+                     {!dbUser?.email && (
                         <li>
                            <Link
                               to="/login"

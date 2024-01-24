@@ -11,11 +11,11 @@ import "./index.css";
 const queryClient = new QueryClient();
 ReactDOM.createRoot(document.getElementById("root")).render(
    <React.StrictMode>
-      <AuthContextProvider>
-         <QueryClientProvider client={queryClient}>
+      <QueryClientProvider client={queryClient}>
+         <AuthContextProvider>
             <RouterProvider router={router} />
             <Toaster />
-         </QueryClientProvider>
-      </AuthContextProvider>
+         </AuthContextProvider>
+      </QueryClientProvider>
    </React.StrictMode>
 );
