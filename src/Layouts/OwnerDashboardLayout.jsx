@@ -56,17 +56,17 @@ const OwnerDashboardLayout = () => {
                         to="/owner-dashboard/owner-houses"
                         className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100">
                         <svg
-                           className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"
+                           className="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900"
                            aria-hidden="true"
                            xmlns="http://www.w3.org/2000/svg"
                            fill="none"
-                           viewBox="0 0 20 18">
+                           viewBox="0 0 24 24">
                            <path
                               stroke="currentColor"
                               strokeLinecap="round"
                               strokeLinejoin="round"
                               strokeWidth="2"
-                              d="M10 16.5c0-1-8-2.7-9-2V1.8c1-1 9 .707 9 1.706M10 16.5V3.506M10 16.5c0-1 8-2.7 9-2V1.8c-1-1-9 .707-9 1.706"
+                              d="M6 4h12M6 4v16M6 4H5m13 0v16m0-16h1m-1 16H6m12 0h1M6 20H5M9 7h1v1H9V7Zm5 0h1v1h-1V7Zm-5 4h1v1H9v-1Zm5 0h1v1h-1v-1Zm-3 4h2a1 1 0 0 1 1 1v4h-4v-4a1 1 0 0 1 1-1Z"
                            />
                         </svg>
                         <span className="ms-3">Houses</span>
@@ -83,16 +83,15 @@ const OwnerDashboardLayout = () => {
                            className="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900"
                            aria-hidden="true"
                            xmlns="http://www.w3.org/2000/svg"
-                           fill="none"
-                           viewBox="0 0 20 18">
+                           fill="currentColor"
+                           viewBox="0 0 24 24">
                            <path
-                              stroke="currentColor"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M10 16.5c0-1-8-2.7-9-2V1.8c1-1 9 .707 9 1.706M10 16.5V3.506M10 16.5c0-1 8-2.7 9-2V1.8c-1-1-9 .707-9 1.706"
+                              fillRule="evenodd"
+                              d="M2 12a10 10 0 1 1 20 0 10 10 0 0 1-20 0Zm11-4.2a1 1 0 1 0-2 0V11H7.8a1 1 0 1 0 0 2H11v3.2a1 1 0 1 0 2 0V13h3.2a1 1 0 1 0 0-2H13V7.8Z"
+                              clipRule="evenodd"
                            />
                         </svg>
+
                         <span className="ms-3">Add New House</span>
                      </Link>
                   </li>
