@@ -52,7 +52,7 @@ const Header = () => {
                      </li>
                      <li>
                         <Link
-                           to="/dashboard/profile"
+                           to="/owner-dashboard/owner-profile"
                            className={styles.navItem}
                            aria-current="page">
                            Dashboard
